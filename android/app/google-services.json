@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "894227135172",
+    "project_id": "sk8spotr",
+    "storage_bucket": "sk8spotr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894227135172:android:b5807928e1ec4b77dc6791",
+        "android_client_info": {
+          "package_name": "com.example.sk8spotr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894227135172-09ikg5ficl66mu3src7l7lgs0fqdhpvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoxzxhwBdLWrHrA5YYoTpEmOUsknqJCYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894227135172-09ikg5ficl66mu3src7l7lgs0fqdhpvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
