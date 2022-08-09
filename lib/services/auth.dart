@@ -1,7 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:sk8spotr/models/my_user.dart';
+import 'package:sk8spotr/services/database.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AuthService {
+
+  Set<Marker> markers = new Set(); // Empty Set of Markers
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -46,6 +50,18 @@ class AuthService {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
+
+      // create a new doc for user with uid
+      markers.add(Marker(
+        markerId: MarkerId('marker${markers.length}'),
+        position: LatLng(43.549999, -80.250000),
+        infoWindow: InfoWindow(
+          title: 'Skate Spot',
+          snippet: 'marker${markers.length}'
+        ),
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+      ));
+      await DatabaseService(uid: user!.uid).updateUserData(markers); //add empty set of markers to user record
       return _userFromUser(user);
     } catch(e) {
       print(e.toString());
